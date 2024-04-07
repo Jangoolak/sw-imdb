@@ -1,0 +1,4 @@
+name = "sw-imdb"
+
+workers_dev = true
+compatibility_date = "2023-02-28"
