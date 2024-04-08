@@ -73,30 +73,34 @@ export default async function getTitle(id) {
     },
     genre: props.aboveTheFoldData.genres.genres.map((e) => e.id),
     releaseDetailed: {
-      date: new Date(
-        props.aboveTheFoldData.releaseDate.year,
-        props.aboveTheFoldData.releaseDate.month - 1,
-        props.aboveTheFoldData.releaseDate.day,
-      ).toISOString(),
-      day: props.aboveTheFoldData.releaseDate.day,
-      month: props.aboveTheFoldData.releaseDate.month,
-      year: props.aboveTheFoldData.releaseDate.year,
+      date: props.aboveTheFoldData.releaseDate
+        ? new Date(
+            props.aboveTheFoldData.releaseDate.year,
+            props.aboveTheFoldData.releaseDate.month - 1,
+            props.aboveTheFoldData.releaseDate.day,
+          ).toISOString()
+        : null,
+      day: props.aboveTheFoldData.releaseDate?.day ?? null,
+      month: props.aboveTheFoldData.releaseDate?.month ?? null,
+      year: props.aboveTheFoldData.releaseDate?.year ?? null,
       releaseLocation: {
         country: props.mainColumnData.releaseDate?.country?.text,
         cca2: props.mainColumnData.releaseDate?.country?.id,
       },
-      originLocations:
-        props.mainColumnData.countriesOfOrigin?.countries.map((e) => ({
+      originLocations: props.mainColumnData.countriesOfOrigin.countries.map(
+        (e) => ({
           country: e.text,
           cca2: e.id,
-        })) ?? [],
+        }),
+      ),
     },
-    year: props.aboveTheFoldData.releaseDate.year,
-    spokenLanguages:
-      props.mainColumnData.spokenLanguages?.spokenLanguages.map((e) => ({
+    year: props.aboveTheFoldData.releaseDate?.year ?? null,
+    spokenLanguages: props.mainColumnData.spokenLanguages.spokenLanguages.map(
+      (e) => ({
         language: e.text,
         id: e.id,
-      })) ?? [],
+      }),
+    ),
     filmingLocations: props.mainColumnData.filmingLocations.edges.map(
       (e) => e.node.text,
     ),
