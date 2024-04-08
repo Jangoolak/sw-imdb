@@ -9,7 +9,7 @@ export default async function cache(c, next) {
     try {
       let url = key.toString().toLowerCase()
       if (url.includes("/reviews")) return 60 * 60 * 24
-      if (url.includes("/title")) return 60 * 60 * 24
+      if (url.includes("/title")) return (60 * 60 * 24) / 2
       if (url.includes("/search")) return 60 * 60 * 24 * 2
     } catch (_) {}
 
