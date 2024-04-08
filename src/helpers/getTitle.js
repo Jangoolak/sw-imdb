@@ -96,7 +96,7 @@ export default async function getTitle(id) {
     },
     year: props.aboveTheFoldData.releaseDate?.year ?? null,
     spokenLanguages:
-      props.mainColumnData.spokenLanguages?.spokenLanguages.map.map((e) => ({
+      props.mainColumnData.spokenLanguages?.spokenLanguages.map((e) => ({
         language: e.text,
         id: e.id,
       })) ?? [],
