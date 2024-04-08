@@ -14,14 +14,14 @@
   "author": "M4hbod <M4hbod@pm.me>",
   "license": "Apache-2.0",
   "devDependencies": {
-    "axios": "^0.28.0",
+    "axios": "^0.27.2",
     "jest": "^28.1.0",
     "prettier": "^3.2.5",
-    "wrangler": "^3.19.0"
+    "wrangler": "^3.3.0"
   },
   "dependencies": {
     "dom-parser": "^0.1.6",
-    "hono": "^3.11.7",
+    "hono": "^1.4.1",
     "html-entities": "^2.3.3",
     "qs": "^6.11.1"
   },
